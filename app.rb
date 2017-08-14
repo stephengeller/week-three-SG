@@ -18,5 +18,6 @@ get '/sausage'do
 end
 
 get '/cat' do
+  @nomm = ['Lionel','Brian','Stephanie'].sample
   erb(:index)
 end
