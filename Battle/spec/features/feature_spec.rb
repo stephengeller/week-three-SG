@@ -33,11 +33,17 @@ feature Battle do
     it 'shows player hit points' do
       expect(page).to have_content(100)
     end
-    
+
     it 'shows confirmation when attacking' do
       sign_in_and_play
       click_button('attackP2')
       expect(page).to have_content('You have attacked Guy')
     end
+    it 'reduces player hp by 10' do
+      sign_in_and_play
+      click_button('attackP2')
+      expect(page).to have_content(90)
+    end
+
   end
 end

@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/stephengeller/Projects/makers-academy/week-three/day-3/week-three-SG/Battle/spec/features/feature_spec.rb": [
+      "/Users/USMAC/Desktop/projects/web_app/Battle/spec/features/feature_spec.rb": [
         1,
         1,
         null,
@@ -31,7 +31,7 @@
         null,
         1,
         1,
-        2,
+        3,
         null,
         null,
         1,
@@ -42,11 +42,36 @@
         1,
         1,
         1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
         null,
         null,
         null
+      ],
+      "/Users/USMAC/Desktop/projects/web_app/Battle/spec/features/player_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/USMAC/Desktop/projects/web_app/Battle/lib/player.rb": [
+        1,
+        1,
+        9,
+        9,
+        null,
+        1,
+        null
       ]
     },
-    "timestamp": 1502896788
+    "timestamp": 1502898595
   }
 }
