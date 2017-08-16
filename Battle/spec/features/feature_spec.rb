@@ -3,23 +3,30 @@ require_relative './../../app'
 
 feature Battle do
 
-it 'provides form for player 1 name' do
-    visit '/'
-    expect(page).to have_field('Player One')
+
+  context '/' do
+    before do
+      visit '/'
+    end
+
+    it 'provides form for player 1 name' do
+      expect(page).to have_field('PlayerOne')
+    end
+
+    it 'provides form for player 2 name' do
+      expect(page).to have_field('PlayerTwo')
+    end
+
+    it 'can submit P1 name' do
+      find_button('Submit').click
+    end
+
+    it 'shows players after submit' do
+      fill_in('PlayerOne', with: 'Stephen')
+      fill_in('PlayerTwo', with: 'Guy')
+      click_button('Submit')
+      expect(page).to have_content('Stephen')
+      expect(page).to have_content('Guy')
+    end
   end
-
-  it 'provides form for player 2 name' do
-    visit '/'
-    expect(page).to have_field('Player Two')
-  end
-
-  it 'allows player 1 to enter names' do
-    visit '/'
-    fill_in('Player One', with: 'Stephen')
-    expect(page).to have_content('Stephen')
-  end
-
-
-
-
 end

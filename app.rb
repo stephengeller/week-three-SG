@@ -16,8 +16,8 @@ get '/naming-cat' do
 end
 
 post '/named-cat' do
-p params
-@name = params[:name]
-@colour = params[:colour]
-erb(:other)
+  p params
+  @name = params[:name]
+  @colour = params[:colour]
+  erb(:other)
 end
