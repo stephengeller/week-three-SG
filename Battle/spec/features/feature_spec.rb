@@ -29,4 +29,13 @@ feature Battle do
       expect(page).to have_content('Guy')
     end
   end
+  context '/play' do
+    before do
+      visit '/play'
+    end
+    it 'shows player hit points' do
+      expect(page).to have_content(100)
+    end
+  
+  end
 end
