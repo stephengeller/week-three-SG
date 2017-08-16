@@ -1,8 +1,7 @@
 require 'sinatra/base'
 
 class Battle < Sinatra::Base
-
-enable :sessions
+  enable :sessions
 
   get '/' do
     @player_1 = params[:PlayerOne]
@@ -21,9 +20,15 @@ enable :sessions
     @player_1 = session[:player_1]
     @player_2 = session[:player_2]
     @player_1_hp = 100
+    @player_2_hp = 100
     erb(:play)
   end
 
-  run! if app_file == $0
+  post '/attackP2' do
+    @player_1 = session[:player_1]
+    @player_2 = session[:player_2]
+    erb(:attackP2)
+  end
 
+  run! if app_file == $PROGRAM_NAME
 end

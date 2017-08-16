@@ -8,8 +8,8 @@ group :development, :test do
   gem 'rake'
   gem 'rspec'
   gem 'rubocop'
+  gem 'shotgun'
   gem 'simplecov'
   gem 'simplecov-console'
   gem 'sinatra'
-  gem 'shotgun'
 end

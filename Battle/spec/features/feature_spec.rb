@@ -2,8 +2,6 @@ require 'spec_helper'
 require_relative './../../app'
 
 feature Battle do
-
-
   context '/' do
     before do
       visit '/'
@@ -22,9 +20,7 @@ feature Battle do
     end
 
     it 'shows players after submit' do
-      fill_in('PlayerOne', with: 'Stephen')
-      fill_in('PlayerTwo', with: 'Guy')
-      click_button('Submit')
+      sign_in_and_play
       expect(page).to have_content('Stephen')
       expect(page).to have_content('Guy')
     end
@@ -33,9 +29,15 @@ feature Battle do
     before do
       visit '/play'
     end
+
     it 'shows player hit points' do
       expect(page).to have_content(100)
     end
-  
+    
+    it 'shows confirmation when attacking' do
+      sign_in_and_play
+      click_button('attackP2')
+      expect(page).to have_content('You have attacked Guy')
+    end
   end
 end
